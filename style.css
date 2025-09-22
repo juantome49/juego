@@ -15,27 +15,59 @@ body {
     padding: 20px;
     width: 80%;
     max-width: 600px;
-    text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
-.text-area {
-    min-height: 150px;
-    margin-bottom: 20px;
-    white-space: pre-wrap;
-    text-align: left;
+/* Estilos para las pantallas */
+.screen {
+    transition: opacity 0.5s ease-in-out;
 }
 
-.options-area button {
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Estilos de botones y otros elementos */
+button {
     background-color: #333;
     color: #f0f0f0;
     border: 1px solid #777;
     padding: 10px 20px;
-    margin: 5px;
+    margin: 10px;
     cursor: pointer;
     font-size: 1em;
 }
 
-.options-area button:hover {
+button:hover {
     background-color: #555;
+}
+
+.input-group {
+    margin: 20px 0;
+}
+
+#player-name-input {
+    background-color: #333;
+    color: #f0f0f0;
+    border: 1px solid #777;
+    padding: 8px;
+    font-size: 1em;
+}
+
+#game-text {
+    text-align: left;
+    white-space: pre-wrap;
+    min-height: 150px;
+}
+
+#player-status {
+    text-align: left;
+    margin-bottom: 10px;
 }
