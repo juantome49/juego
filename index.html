@@ -3,16 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aventura de la Mazmorra</title>
+    <title>Aventura en la Mazmorra V3</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
-        <h1>Aventura de la Mazmorra</h1>
-        <div id="game-text" class="text-area">
+        <div id="start-screen" class="screen active">
+            <h1>Aventura en la Mazmorra</h1>
+            <p>Una épica aventura de texto donde tus decisiones lo son todo.</p>
+            <div class="input-group">
+                <label for="player-name">¿Cuál es tu nombre, aventurero?</label>
+                <input type="text" id="player-name-input" placeholder="Introduce tu nombre" maxlength="20">
             </div>
-        <div id="options-container" class="options-area">
+            <button id="start-button">Comenzar Aventura</button>
+        </div>
+
+        <div id="game-screen" class="screen hidden">
+            <h2 id="game-title"></h2>
+            <div id="player-status">
+                <span id="player-name"></span> | <span id="player-hp">Vida: 100</span> | <span id="player-inventory">Inventario: Vacío</span>
             </div>
+            <hr>
+            <div id="game-text"></div>
+            <div id="options-container"></div>
+        </div>
+
+        <div id="end-screen" class="screen hidden">
+            <h2 id="end-message"></h2>
+            <p id="end-status"></p>
+            <button id="restart-button">Jugar de Nuevo</button>
+        </div>
     </div>
     <script src="game.js"></script>
 </body>
