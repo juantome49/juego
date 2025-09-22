@@ -3,35 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aventura en la Mazmorra V3</title>
+    <title>Aventura en la Mazmorra - Pixel Art Edition</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="game-container">
+        
         <div id="start-screen" class="screen active">
+            <img src="https://juantome49.github.io/game-assets/assets/logo_pixel.png" alt="Aventura en la Mazmorra" class="pixel-logo">
             <h1>Aventura en la Mazmorra</h1>
-            <p>Una épica aventura de texto donde tus decisiones lo son todo.</p>
+            <p>Una épica aventura de texto en pixel art.</p>
             <div class="input-group">
                 <label for="player-name">¿Cuál es tu nombre, aventurero?</label>
                 <input type="text" id="player-name-input" placeholder="Introduce tu nombre" maxlength="20">
             </div>
-            <button id="start-button">Comenzar Aventura</button>
+            <button id="start-button" class="pixel-button">Comenzar Aventura</button>
         </div>
 
         <div id="game-screen" class="screen hidden">
-            <h2 id="game-title"></h2>
-            <div id="player-status">
-                <span id="player-name"></span> | <span id="player-hp">Vida: 100</span> | <span id="player-inventory">Inventario: Vacío</span>
+            <div id="background-image-container" class="pixel-background">
+                </div>
+            <div class="game-overlay">
+                <h2 id="game-title"></h2>
+                <div id="player-status">
+                    <span id="player-name"></span> | <span id="player-hp">Vida: 100</span> |
+                    <div id="player-inventory-display" class="inventory-display">
+                        Inventario: <div id="inventory-icons" class="icon-container"></div>
+                    </div>
+                </div>
+                <hr>
+                <div id="game-text"></div>
+                <div id="combat-display" class="hidden">
+                    <img id="player-sprite" src="https://juantome49.github.io/game-assets/assets/player_sprite.png" alt="Jugador" class="combat-sprite hidden">
+                    <img id="enemy-sprite" src="" alt="Enemigo" class="combat-sprite hidden">
+                </div>
+                <div id="options-container"></div>
             </div>
-            <hr>
-            <div id="game-text"></div>
-            <div id="options-container"></div>
         </div>
 
         <div id="end-screen" class="screen hidden">
+            <img id="end-image" src="" alt="Fin del Juego" class="pixel-end-image">
             <h2 id="end-message"></h2>
             <p id="end-status"></p>
-            <button id="restart-button">Jugar de Nuevo</button>
+            <button id="restart-button" class="pixel-button">Jugar de Nuevo</button>
         </div>
     </div>
     <script src="game.js"></script>
