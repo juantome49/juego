@@ -37,6 +37,8 @@ const backgroundImageContainer = document.getElementById("background-image-conta
 const combatDisplayEl = document.getElementById("combat-display");
 const playerSpriteEl = document.getElementById("player-sprite");
 const enemySpriteEl = document.getElementById("enemy-sprite");
+const fullscreenButton = document.getElementById("fullscreen-button");
+const gameContainer = document.querySelector(".game-container");
 
 
 // --- Datos del Juego ---
@@ -301,6 +303,16 @@ startButton.addEventListener("click", () => {
 });
 
 restartButton.addEventListener("click", resetGame);
+
+fullscreenButton.addEventListener("click", () => {
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+    } else {
+        gameContainer.requestFullscreen().catch(err => {
+            alert(`Error al intentar habilitar pantalla completa: ${err.message}`);
+        });
+    }
+});
 
 // Iniciar el juego en la pantalla de inicio
 showScreen("start");
